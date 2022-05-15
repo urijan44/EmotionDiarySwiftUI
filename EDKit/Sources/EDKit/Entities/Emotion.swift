@@ -8,16 +8,26 @@
 import Foundation
 
 public struct Emotion {
-  var imageURL: String
-  var title: String
-  var count: Int
+  private(set) var imageURL: String
+  private(set) var title: String
+  private(set) var count: Int
 
-  public init(
-    imageURL: String,
-    title: String,
-    count: Int) {
-      self.imageURL = imageURL
-      self.title = title
-      self.count = count
-    }
+  public init() {
+    self.imageURL = ""
+    self.title = ""
+    self.count = 0
+  }
+
+  public mutating func increase() {
+    count += 1
+  }
+
+  public mutating func setTitle(title: String) {
+    self.title = title
+  }
+
+  public mutating func changeImage(urlString: String) {
+    self.imageURL = urlString
+  }
+
 }
