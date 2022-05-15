@@ -19,6 +19,7 @@
 		8A55A80B28309D020073739B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8A55A80D28309D020073739B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A55A81028309D020073739B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8A55A8172830C45A0073739B /* EDUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EDUIKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +37,7 @@
 			isa = PBXGroup;
 			children = (
 				8A55A80828309D020073739B /* EmotionDiary */,
+				8A55A8172830C45A0073739B /* EDUIKit */,
 				8A55A80728309D020073739B /* Products */,
 			);
 			sourceTree = "<group>";
