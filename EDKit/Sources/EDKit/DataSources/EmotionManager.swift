@@ -17,23 +17,60 @@ final class EmotionManager: EmotionService {
   private let fileSystem = try! FileSystem()
   private var emotions: [String: Emotion] = [:]
 
+  init() {
+    mappingEmotions(emotions: load())
+  }
+
   func save(emotion: Emotion) throws {
+    emotionsUpdate(emotion: emotion)
+
+    do {
+      let emotionsArray: [Emotion] = emotions.values.map{$0}
+      let encoded = try encoding(emotions: emotionsArray)
+      try fileSystem.save(data: encoded)
+    } catch let error {
+      throw error
+    }
+  }
+
+  private func mappingEmotions(emotions: [Emotion]) {
+    emotions.forEach { emotion in
+      self.emotions.updateValue(emotion, forKey: emotion.id)
+    }
+  }
+
+  private func emotionsUpdate(emotion: Emotion) {
     emotions.updateValue(emotion, forKey: emotion.id)
   }
 
-  func load() -> [Emotion] {
-    if let data = try? loadData(),
-       let decoded = try? JSONDecoder().decode([Emotion].self, from: data) {
-      return decoded
-    } else {
-      return []
+  private func encoding(emotions: [Emotion]) throws -> Data {
+
+    do {
+      let data = try JSONEncoder().encode(emotions)
+      return data
+    } catch let error {
+      throw error
     }
   }
 
-  init() {
-    load().forEach { emotion in
-      emotions.updateValue(emotion, forKey: emotion.id)
+  func load() -> [Emotion] {
+    if let data = try? loadData() {
+
+      do {
+        let decoded = try JSONDecoder().decode([Emotion].self, from: data)
+
+        if decoded.isEmpty {
+          initalData()
+
+        } else {
+          return decoded
+        }
+
+      } catch let error {
+        fatalError(error.localizedDescription)
+      }
     }
+    return []
   }
 
   private func loadData() throws -> Data {
@@ -43,5 +80,27 @@ final class EmotionManager: EmotionService {
     } catch let error {
       throw error
     }
+  }
+
+  private func initalData() {
+    let emotions: [Emotion] = [
+      Emotion(title: "행복해"),
+      Emotion(title: "즐거워"),
+      Emotion(title: "좋아해"),
+      Emotion(title: "화가나"),
+      Emotion(title: "심심해"),
+      Emotion(title: "잠이와"),
+      Emotion(title: "당황해"),
+      Emotion(title: "심통나"),
+      Emotion(title: "눈문나")
+    ]
+
+    do {
+      let data = try encoding(emotions: emotions)
+      try fileSystem.save(data: data)
+    } catch let error{
+      fatalError("Error: 데이터 초기화에 실패했습니다.\n\(error)")
+    }
+
   }
 }

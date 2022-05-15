@@ -14,9 +14,9 @@ public final class Emotion: Codable {
   private(set) var title: String
   private(set) var count: Int
 
-  public init() {
+  public init(title: String) {
     self.imageURL = ""
-    self.title = ""
+    self.title = title
     self.count = 0
   }
 
@@ -36,7 +36,8 @@ public final class Emotion: Codable {
 
 extension Emotion: Hashable {
   public static func == (lhs: Emotion, rhs: Emotion) -> Bool {
-    lhs === rhs
+    lhs.id == rhs.id &&
+    lhs.title == rhs.title
   }
 
   public func hash(into hasher: inout Hasher) {

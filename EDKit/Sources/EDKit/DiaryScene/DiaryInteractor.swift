@@ -25,7 +25,6 @@ extension DiaryInteractor: DiaryBusinessLogic {
     let emotion = request.emotion
     increaseEmotion(emotion: emotion)
 
-
     let editedEmotions = loadEmotion()
     let response = DiaryMessage.Response(emotions: editedEmotions)
     presenter?.fetchResult(response: response)
@@ -44,7 +43,13 @@ extension DiaryInteractor: DiaryBusinessLogic {
 
   private func increaseEmotion(emotion: Emotion) {
     emotion.increase()
-    try? emotionManager.save(emotion: emotion)
+
+    do {
+      try emotionManager.save(emotion: emotion)
+    } catch let error {
+      print(error)
+    }
+
   }
 
   private func loadEmotion() -> [Emotion] {

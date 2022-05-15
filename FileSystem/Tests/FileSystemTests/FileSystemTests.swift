@@ -9,6 +9,7 @@ final class FileSystemTests: XCTestCase {
   override func setUpWithError() throws {
     try super.setUpWithError()
     sut = try! FileSystem()
+    print(sut.defaultURL)
   }
 
   override func tearDownWithError() throws {
