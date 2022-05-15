@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct DiaryMessage {
-  struct Request {
+public struct DiaryMessage {
+  public struct Request {
     var emotion: Emotion
   }
 
-  struct Response {
+  public struct Response {
     var emotions: [Emotion]
   }
 }

@@ -8,11 +8,11 @@
 import Foundation
 
 public final class Emotion: Codable {
-  private(set) var id = UUID().uuidString
-  private(set) var sortIndex: Int = -1
-  private(set) var imageURL: String
-  private(set) var title: String
-  private(set) var count: Int
+  private(set) public var id = UUID().uuidString
+  private(set) public var sortIndex: Int = -1
+  private(set) public var imageURL: String
+  private(set) public var title: String
+  private(set) public var count: Int
 
   public init(title: String) {
     self.imageURL = ""

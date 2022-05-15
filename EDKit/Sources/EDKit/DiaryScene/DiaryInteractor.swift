@@ -12,11 +12,11 @@ protocol DiaryBusinessLogic {
   func fetchEmotions()
 }
 
-final class DiaryInteractor {
+final public class DiaryInteractor {
   private let emotionManager = EmotionManager()
-  var presenter: DiaryPresentaitonLogic?
+  public var presenter: DiaryPresentaitonLogic?
 
-  init() {}
+  public init() {}
 }
 
 extension DiaryInteractor: DiaryBusinessLogic {

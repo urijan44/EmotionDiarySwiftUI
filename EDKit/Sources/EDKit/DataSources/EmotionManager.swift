@@ -18,6 +18,7 @@ final class EmotionManager: EmotionService {
   private var emotions: [String: Emotion] = [:]
 
   init() {
+    print(fileSystem.defaultURL)
     mappingEmotions(emotions: load())
   }
 
@@ -60,15 +61,19 @@ final class EmotionManager: EmotionService {
         let decoded = try JSONDecoder().decode([Emotion].self, from: data)
 
         if decoded.isEmpty {
-          initalData()
-
+          mappingEmotions(emotions:  initalData())
         } else {
-          return decoded
+          let sorted = decoded.sorted { lhs, rhs in
+            lhs.id < rhs.id
+          }
+          return sorted
         }
 
       } catch let error {
         fatalError(error.localizedDescription)
       }
+    } else {
+      mappingEmotions(emotions:  initalData())
     }
     return []
   }
@@ -82,7 +87,7 @@ final class EmotionManager: EmotionService {
     }
   }
 
-  private func initalData() {
+  private func initalData() -> [Emotion] {
     let emotions: [Emotion] = [
       Emotion(title: "행복해"),
       Emotion(title: "즐거워"),
@@ -92,12 +97,15 @@ final class EmotionManager: EmotionService {
       Emotion(title: "잠이와"),
       Emotion(title: "당황해"),
       Emotion(title: "심통나"),
-      Emotion(title: "눈문나")
-    ]
+      Emotion(title: "눈물나")
+    ].sorted { lhs, rhs in
+      lhs.id < rhs.id
+    }
 
     do {
       let data = try encoding(emotions: emotions)
       try fileSystem.save(data: data)
+      return emotions
     } catch let error{
       fatalError("Error: 데이터 초기화에 실패했습니다.\n\(error)")
     }

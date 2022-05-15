@@ -11,9 +11,11 @@
 		8A55A80C28309D020073739B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55A80B28309D020073739B /* ContentView.swift */; };
 		8A55A80E28309D020073739B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A55A80D28309D020073739B /* Assets.xcassets */; };
 		8A55A81128309D020073739B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A55A81028309D020073739B /* Preview Assets.xcassets */; };
-		8A55A81A2830CE360073739B /* EDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A55A8192830CE360073739B /* EDUIKit */; };
 		8A55A81D2830CF350073739B /* EDKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A55A81C2830CF350073739B /* EDKit */; };
 		8A55A8212830DFB10073739B /* FileSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 8A55A8202830DFB10073739B /* FileSystem */; };
+		8A55A823283111AE0073739B /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55A822283111AE0073739B /* AppContainer.swift */; };
+		8A55A825283113B90073739B /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55A824283113B90073739B /* DiaryView.swift */; };
+		8A55A827283118C00073739B /* EmotionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55A826283118C00073739B /* EmotionButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,9 +24,11 @@
 		8A55A80B28309D020073739B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8A55A80D28309D020073739B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A55A81028309D020073739B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8A55A8172830C45A0073739B /* EDUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EDUIKit; sourceTree = "<group>"; };
 		8A55A81B2830CF2A0073739B /* EDKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EDKit; sourceTree = "<group>"; };
 		8A55A81F2830D7C80073739B /* FileSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FileSystem; sourceTree = "<group>"; };
+		8A55A822283111AE0073739B /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		8A55A824283113B90073739B /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		8A55A826283118C00073739B /* EmotionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +37,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A55A81D2830CF350073739B /* EDKit in Frameworks */,
-				8A55A81A2830CE360073739B /* EDUIKit in Frameworks */,
 				8A55A8212830DFB10073739B /* FileSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,7 +48,6 @@
 			isa = PBXGroup;
 			children = (
 				8A55A80828309D020073739B /* EmotionDiary */,
-				8A55A8172830C45A0073739B /* EDUIKit */,
 				8A55A81B2830CF2A0073739B /* EDKit */,
 				8A55A81F2830D7C80073739B /* FileSystem */,
 				8A55A80728309D020073739B /* Products */,
@@ -66,6 +68,9 @@
 			children = (
 				8A55A80928309D020073739B /* EmotionDiaryApp.swift */,
 				8A55A80B28309D020073739B /* ContentView.swift */,
+				8A55A822283111AE0073739B /* AppContainer.swift */,
+				8A55A824283113B90073739B /* DiaryView.swift */,
+				8A55A826283118C00073739B /* EmotionButton.swift */,
 				8A55A80D28309D020073739B /* Assets.xcassets */,
 				8A55A80F28309D020073739B /* Preview Content */,
 			);
@@ -104,7 +109,6 @@
 			);
 			name = EmotionDiary;
 			packageProductDependencies = (
-				8A55A8192830CE360073739B /* EDUIKit */,
 				8A55A81C2830CF350073739B /* EDKit */,
 				8A55A8202830DFB10073739B /* FileSystem */,
 			);
@@ -162,8 +166,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A55A825283113B90073739B /* DiaryView.swift in Sources */,
+				8A55A827283118C00073739B /* EmotionButton.swift in Sources */,
 				8A55A80C28309D020073739B /* ContentView.swift in Sources */,
 				8A55A80A28309D020073739B /* EmotionDiaryApp.swift in Sources */,
+				8A55A823283111AE0073739B /* AppContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,10 +375,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8A55A8192830CE360073739B /* EDUIKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = EDUIKit;
-		};
 		8A55A81C2830CF350073739B /* EDKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = EDKit;

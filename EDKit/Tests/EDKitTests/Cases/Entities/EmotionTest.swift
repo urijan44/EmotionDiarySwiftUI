@@ -14,7 +14,7 @@ final class EmotionTest: XCTestCase {
 
   override func setUpWithError() throws {
     try super.setUpWithError()
-    sut = Emotion()
+    sut = Emotion(title: "")
   }
 
   override func tearDownWithError() throws {

@@ -7,17 +7,17 @@
 
 import Foundation
 
-protocol DiaryPresentaitonLogic {
+public protocol DiaryPresentaitonLogic {
   func fetchResult(response: DiaryMessage.Response)
 }
 
-final class DiaryPresenter {
-  var viewModel: DiaryDisplayLogic?
-  init() {}
+final public class DiaryPresenter {
+  public var viewModel: DiaryDisplayLogic?
+  public init() {}
 }
 
 extension DiaryPresenter: DiaryPresentaitonLogic {
-  func fetchResult(response: DiaryMessage.Response) {
+  public func fetchResult(response: DiaryMessage.Response) {
     let emotions = response.emotions
     viewModel?.updateDisplay(emotions: emotions)
   }

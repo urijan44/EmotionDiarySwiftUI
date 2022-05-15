@@ -7,33 +7,38 @@
 
 import Foundation
 
-protocol DiaryDisplayLogic {
+public protocol DiaryDisplayLogic {
   func updateDisplay(emotions: [Emotion])
 }
 
-protocol DiaryViewModelInterface: ObservableObject {
+public protocol DiaryViewModelInterface: ObservableObject {
   var emotions: [Emotion] { get set }
   func increaseEmotion(emotion: Emotion)
+  func fetchEmotions()
 }
 
 public final class DiaryViewModel {
-  var interactor: DiaryInteractor?
+  public var interactor: DiaryInteractor?
 
   @Published public var emotions: [Emotion] = []
 
   public init() {
     interactor?.fetchEmotions()
   }
+
+  public func fetchEmotions() {
+    interactor?.fetchEmotions()
+  }
 }
 
 extension DiaryViewModel: DiaryDisplayLogic {
-  func updateDisplay(emotions: [Emotion]) {
+  public func updateDisplay(emotions: [Emotion]) {
     self.emotions = emotions
   }
 }
 
 extension DiaryViewModel: DiaryViewModelInterface {
-  func increaseEmotion(emotion: Emotion) {
+  public func increaseEmotion(emotion: Emotion) {
     let request = DiaryMessage.Request(emotion: emotion)
     interactor?.increaseEmotion(request: request)
   }

@@ -7,20 +7,13 @@
 
 import SwiftUI
 import EDUIKit
+import EDKit
 import FileSystem
 
 struct ContentView: View {
-  @State var count: Int = 0
+  let appContainer = AppContainer()
   var body: some View {
-    EmotionButton(
-      title: "즐거워",
-      count: $count) {
-      Image(systemName: "house.fill")
-    }
-      .onAppear{
-        let fs = FileSystem().defaultURL
-        print(fs)
-      }
+    appContainer.makeDiaryView()
   }
 }
 
@@ -29,3 +22,5 @@ struct ContentView_Previews: PreviewProvider {
     ContentView()
   }
 }
+
+
