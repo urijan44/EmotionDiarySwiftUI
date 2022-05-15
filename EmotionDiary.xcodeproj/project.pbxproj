@@ -11,6 +11,8 @@
 		8A55A80C28309D020073739B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A55A80B28309D020073739B /* ContentView.swift */; };
 		8A55A80E28309D020073739B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A55A80D28309D020073739B /* Assets.xcassets */; };
 		8A55A81128309D020073739B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A55A81028309D020073739B /* Preview Assets.xcassets */; };
+		8A55A81A2830CE360073739B /* EDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A55A8192830CE360073739B /* EDUIKit */; };
+		8A55A81D2830CF350073739B /* EDKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A55A81C2830CF350073739B /* EDKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,7 @@
 		8A55A80D28309D020073739B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A55A81028309D020073739B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A55A8172830C45A0073739B /* EDUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EDUIKit; sourceTree = "<group>"; };
+		8A55A81B2830CF2A0073739B /* EDKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EDKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +30,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A55A81D2830CF350073739B /* EDKit in Frameworks */,
+				8A55A81A2830CE360073739B /* EDUIKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,7 +43,9 @@
 			children = (
 				8A55A80828309D020073739B /* EmotionDiary */,
 				8A55A8172830C45A0073739B /* EDUIKit */,
+				8A55A81B2830CF2A0073739B /* EDKit */,
 				8A55A80728309D020073739B /* Products */,
+				8A55A8182830CE360073739B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +76,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8A55A8182830CE360073739B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,6 +99,10 @@
 			dependencies = (
 			);
 			name = EmotionDiary;
+			packageProductDependencies = (
+				8A55A8192830CE360073739B /* EDUIKit */,
+				8A55A81C2830CF350073739B /* EDKit */,
+			);
 			productName = EmotionDiary;
 			productReference = 8A55A80628309D020073739B /* EmotionDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +295,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +325,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,6 +361,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8A55A8192830CE360073739B /* EDUIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EDUIKit;
+		};
+		8A55A81C2830CF350073739B /* EDKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = EDKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8A55A7FE28309D020073739B /* Project object */;
 }
