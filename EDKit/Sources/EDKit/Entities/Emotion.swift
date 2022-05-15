@@ -7,7 +7,9 @@
 
 import Foundation
 
-public struct Emotion {
+public final class Emotion: Codable {
+  private(set) var id = UUID().uuidString
+  private(set) var sortIndex: Int = -1
   private(set) var imageURL: String
   private(set) var title: String
   private(set) var count: Int
@@ -18,16 +20,26 @@ public struct Emotion {
     self.count = 0
   }
 
-  public mutating func increase() {
+  public func increase() {
     count += 1
   }
 
-  public mutating func setTitle(title: String) {
+  public func setTitle(title: String) {
     self.title = title
   }
 
-  public mutating func changeImage(urlString: String) {
+  public func changeImage(urlString: String) {
     self.imageURL = urlString
   }
 
+}
+
+extension Emotion: Hashable {
+  public static func == (lhs: Emotion, rhs: Emotion) -> Bool {
+    lhs === rhs
+  }
+
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+  }
 }

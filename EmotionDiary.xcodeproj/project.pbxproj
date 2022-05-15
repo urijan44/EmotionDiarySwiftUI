@@ -13,6 +13,7 @@
 		8A55A81128309D020073739B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A55A81028309D020073739B /* Preview Assets.xcassets */; };
 		8A55A81A2830CE360073739B /* EDUIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A55A8192830CE360073739B /* EDUIKit */; };
 		8A55A81D2830CF350073739B /* EDKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8A55A81C2830CF350073739B /* EDKit */; };
+		8A55A8212830DFB10073739B /* FileSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 8A55A8202830DFB10073739B /* FileSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		8A55A81028309D020073739B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A55A8172830C45A0073739B /* EDUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EDUIKit; sourceTree = "<group>"; };
 		8A55A81B2830CF2A0073739B /* EDKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = EDKit; sourceTree = "<group>"; };
+		8A55A81F2830D7C80073739B /* FileSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = FileSystem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +34,7 @@
 			files = (
 				8A55A81D2830CF350073739B /* EDKit in Frameworks */,
 				8A55A81A2830CE360073739B /* EDUIKit in Frameworks */,
+				8A55A8212830DFB10073739B /* FileSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +47,7 @@
 				8A55A80828309D020073739B /* EmotionDiary */,
 				8A55A8172830C45A0073739B /* EDUIKit */,
 				8A55A81B2830CF2A0073739B /* EDKit */,
+				8A55A81F2830D7C80073739B /* FileSystem */,
 				8A55A80728309D020073739B /* Products */,
 				8A55A8182830CE360073739B /* Frameworks */,
 			);
@@ -102,6 +106,7 @@
 			packageProductDependencies = (
 				8A55A8192830CE360073739B /* EDUIKit */,
 				8A55A81C2830CF350073739B /* EDKit */,
+				8A55A8202830DFB10073739B /* FileSystem */,
 			);
 			productName = EmotionDiary;
 			productReference = 8A55A80628309D020073739B /* EmotionDiary.app */;
@@ -370,6 +375,10 @@
 		8A55A81C2830CF350073739B /* EDKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = EDKit;
+		};
+		8A55A8202830DFB10073739B /* FileSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FileSystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
