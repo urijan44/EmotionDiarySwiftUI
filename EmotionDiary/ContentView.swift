@@ -6,11 +6,21 @@
 //
 
 import SwiftUI
+import EDUIKit
+import FileSystem
 
 struct ContentView: View {
+  @State var count: Int = 0
   var body: some View {
-    Text("Hello, world!")
-      .padding()
+    EmotionButton(
+      title: "즐거워",
+      count: $count) {
+      Image(systemName: "house.fill")
+    }
+      .onAppear{
+        let fs = FileSystem().defaultURL
+        print(fs)
+      }
   }
 }
 
