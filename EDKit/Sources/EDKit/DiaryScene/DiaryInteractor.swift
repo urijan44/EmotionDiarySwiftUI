@@ -8,31 +8,46 @@
 import Foundation
 
 protocol DiaryBusinessLogic {
-  func increaseEmotion(emotion: Emotion)
+  func increaseEmotion(request: DiaryMessage.Request)
   func fetchEmotions()
 }
 
 final class DiaryInteractor {
   private let emotionManager = EmotionManager()
-  
-  init() {
+  var presenter: DiaryPresentaitonLogic?
 
-  }
+  init() {}
 }
 
 extension DiaryInteractor: DiaryBusinessLogic {
 
-  func setEmotionTitle(title: String, emotion: Emotion) {
+  func increaseEmotion(request: DiaryMessage.Request) {
+    let emotion = request.emotion
+    increaseEmotion(emotion: emotion)
+
+
+    let editedEmotions = loadEmotion()
+    let response = DiaryMessage.Response(emotions: editedEmotions)
+    presenter?.fetchResult(response: response)
+  }
+
+  func fetchEmotions() {
+    let emotions = loadEmotion()
+    let response = DiaryMessage.Response(emotions: emotions)
+    presenter?.fetchResult(response: response)
+  }
+
+  private func setEmotionTitle(title: String, emotion: Emotion) {
     emotion.setTitle(title: title)
     try? emotionManager.save(emotion: emotion)
   }
 
-  func increaseEmotion(emotion: Emotion) {
+  private func increaseEmotion(emotion: Emotion) {
     emotion.increase()
     try? emotionManager.save(emotion: emotion)
   }
 
-  func fetchEmotions() {
-    let emotions = emotionManager.load()
+  private func loadEmotion() -> [Emotion] {
+    emotionManager.load()
   }
 }
